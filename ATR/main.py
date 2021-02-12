@@ -19,7 +19,7 @@ print(sf_ibis)
 f = np.linspace(0.01, 6 * 2 * np.pi, 10000)
 pgram = signal.lombscargle(t, A, f, normalize=True)
 
-fig, (ax1, ax2) = plt.subplots(2)
+fig, (ax1, ax2) = plt.subplots(2,figsize=(16, 8))
 fig.suptitle('Radar Data', fontsize=18)
 ax1.set_xlabel("Time [s]", fontsize=14)
 ax1.set_ylabel("Amplitude [mm]", fontsize=14)
@@ -34,6 +34,7 @@ ax2.annotate('f=1.012 Hz', xy=(1.1, 0.9), xytext=(2, 0.8),
 # 1.017
 ax2.set_xlabel('Frequency [Hz]', fontsize=14)
 ax2.set_ylabel("P(f)", fontsize=14)
+plt.savefig("radar.png", dpi=300)
 plt.show()
 
 tGk = []
@@ -53,7 +54,7 @@ f_Gk = np.linspace(0.01, 6 * 2 * np.pi, 10000)
 pgram_Gk = signal.lombscargle(tGk, AGk, f_Gk, normalize=True)
 #
 
-fig, (ax1, ax2) = plt.subplots(2)
+fig, (ax1, ax2) = plt.subplots(2, figsize=(20, 10))
 fig.suptitle('TC Data', fontsize=16)
 ax1.set_xlabel("Time [s]", fontsize=14)
 ax1.set_ylabel("Amplitude [gon]", fontsize=14)
@@ -68,4 +69,5 @@ ax2.annotate('f=1.017 Hz', xy=(1.1, 0.85), xytext=(2, 0.8),
              verticalalignment='bottom',
              fontsize=14,
              )
+plt.savefig("tc.png", dpi=300)
 plt.show()

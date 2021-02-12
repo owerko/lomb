@@ -25,6 +25,13 @@ ax1.set_xlabel("Time [s]", fontsize=14)
 ax1.set_ylabel("Amplitude [mm]", fontsize=14)
 ax1.plot(t, A, linewidth=3, marker='o', markerfacecolor='red', markersize=8)
 ax2.plot(f / 2 / np.pi, pgram, linewidth=3)
+ax2.annotate('f=1.012 Hz', xy=(1.1, 0.9), xytext=(2, 0.8),
+             arrowprops=dict(arrowstyle="simple", color='black', lw=1.5),
+             horizontalalignment='center',
+             verticalalignment='bottom',
+             fontsize=14,
+             )
+# 1.017
 ax2.set_xlabel('Frequency [Hz]', fontsize=14)
 ax2.set_ylabel("P(f)", fontsize=14)
 plt.show()
@@ -55,4 +62,10 @@ ax1.plot(tGk, AGk, linewidth=3, marker='o', markerfacecolor='red', markersize=8)
 ax2.plot(f_Gk / 2 / np.pi, pgram_Gk, linewidth=3)
 ax2.set_xlabel('Frequency [Hz]', fontsize=14)
 ax2.set_ylabel("P(f)", fontsize=14)
+ax2.annotate('f=1.017 Hz', xy=(1.1, 0.85), xytext=(2, 0.8),
+             arrowprops=dict(arrowstyle="simple", color='black', lw=1.5),
+             horizontalalignment='center',
+             verticalalignment='bottom',
+             fontsize=14,
+             )
 plt.show()
